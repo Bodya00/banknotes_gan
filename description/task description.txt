@@ -1,0 +1,6 @@
+(PL)
+9.Budowa programu mającego na celu implementację generatywnych sieci przeciwstawnych GAN (Generative Adversarial Network)
+do generowania wiedzy na podstawie wnioskowania w oparciu o wykryte zależności we wskazanym zbiorze danych.
+ W projekcie należy wykorzystać zbiór banknote authentication Data Set
+
+(https://archive.ics.uci.edu/ml/datasets/banknote+authentication).
