@@ -39,7 +39,7 @@ class GAN:
         :return:
         """
         names = ['variance', 'skewness', 'curtosis', 'entropy', 'class']
-        dataset = pd.read_csv('data_banknotes.csv', names=names)
+        dataset = pd.read_csv('data/data_banknotes.csv', names=names)
         dataset = dataset.loc[dataset['class'] == 0].values  # only real banknotes, because fake ones will be generated
         X = dataset[:, :4]  # omitting last column, we already know it will be 0
         data = self.structure_data(X)
@@ -175,7 +175,7 @@ class GAN:
             Plot and save data when finished.
             """
             self.plot()
-            self.results.to_csv('results.csv', index=False)
+            self.results.to_csv('results/results.csv', index=False)
 
     def plot(self):
         """
@@ -189,7 +189,7 @@ class GAN:
         fig = plt.gcf()
         fig.set_dpi(200)
         plt.legend(loc='upper right', framealpha=0, prop={'size': 'large'})
-        fig.savefig('loss.png', dpi=200)
+        fig.savefig('results/loss.png', dpi=200)
 
         ax_acc = self.logs_acc.plot(linewidth=0.75, figsize=(20, 10))
         ax_acc.set_xlabel('iteration')
@@ -197,7 +197,7 @@ class GAN:
         fig = plt.gcf()
         fig.set_dpi(200)
         plt.legend(loc='upper right', framealpha=0, prop={'size': 'large'})
-        fig.savefig('acc.png', dpi=200)
+        fig.savefig('results/acc.png', dpi=200)
 
         plt.show()
 
